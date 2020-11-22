@@ -1,8 +1,14 @@
 const { InMemoryRepository } = require('../src/InMemoryRepository');
 const { ProductsService } = require('../src/ProductsService');
 
-it.skip('should return empty list if no products',  () => {
+it('should return empty list if no products', async () => {
     // DEMO
+    // given
+    let productService = new ProductsService();
+    let product = await productService.products();
+
+    // when
+    expect(product).toEqual([]);
 });
 
 it.skip('should allow to add a product',  () => {
